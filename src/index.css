@@ -1,0 +1,525 @@
+/* Graphik Font Family - Local Files */
+@font-face {
+  font-family: 'Graphik';
+  src: url('./fonts/Graphik Family/Graphik-Extralight-Trial.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('./fonts/Graphik Family/Graphik-Light-Trial.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('./fonts/Graphik Family/Graphik-Regular-Trial.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('./fonts/Graphik Family/Graphik-Medium-Trial.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Brand Colors - Solid, No Gradients */
+  --primary-red: #E53935;
+  --primary-blue: #3B5998;
+  --primary-green: #4CAF50;
+  --primary-teal: #4DB6AC;
+
+  --accent-red-light: #EF5350;
+  --accent-blue-light: #5C7BC4;
+  --accent-green-light: #66BB6A;
+
+  /* Neutral Colors */
+  --neutral-white: #FFFFFF;
+  --neutral-light: #FAFAFA;
+  --neutral-gray-50: #F9FAFB;
+  --neutral-gray-100: #F3F4F6;
+  --neutral-gray-200: #E5E7EB;
+  --neutral-gray-300: #D1D5DB;
+  --neutral-gray-400: #9CA3AF;
+  --neutral-gray-500: #6B7280;
+  --neutral-gray-600: #4B5563;
+  --neutral-dark: #1F2937;
+  --neutral-black: #111827;
+
+  /* Premium Typography - Graphik Font */
+  --font-display: 'Graphik', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-primary: 'Graphik', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-secondary: 'Graphik', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.75rem;
+  --font-size-5xl: 4rem;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6rem;
+  --spacing-4xl: 8rem;
+
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Shadows - Premium, Subtle */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--neutral-dark);
+  background-color: var(--neutral-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  font-weight: 400;
+}
+
+/* Premium Typography - Light Weight (300) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--neutral-black);
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: var(--font-size-5xl);
+  font-weight: 300;
+}
+
+h2 {
+  font-size: var(--font-size-4xl);
+  font-weight: 300;
+}
+
+h3 {
+  font-size: var(--font-size-3xl);
+  font-weight: 300;
+}
+
+h4 {
+  font-size: var(--font-size-2xl);
+  font-weight: 300;
+}
+
+h5 {
+  font-size: var(--font-size-xl);
+  font-weight: 300;
+}
+
+h6 {
+  font-size: var(--font-size-lg);
+  font-weight: 300;
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--neutral-gray-600);
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--accent-blue-light);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.container-wide {
+  max-width: 1400px;
+}
+
+/* Premium Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: var(--font-size-sm);
+}
+
+.btn-primary {
+  background: var(--primary-blue);
+  color: var(--neutral-white);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  background: var(--accent-blue-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background: var(--primary-teal);
+  color: var(--neutral-white);
+}
+
+.btn-secondary:hover {
+  background: var(--accent-green-light);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+.btn-outline:hover {
+  background: var(--primary-blue);
+  color: var(--neutral-white);
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: var(--neutral-white);
+}
+
+.btn-whatsapp:hover {
+  background: #20BA5A;
+}
+
+/* Cards */
+.card {
+  background: var(--neutral-white);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  height: 100%;
+  border: 1px solid var(--neutral-gray-100);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--neutral-gray-200);
+}
+
+/* Form Elements */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-base);
+  border: 2px solid var(--neutral-gray-200);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  background: var(--neutral-white);
+  color: var(--neutral-dark);
+  font-weight: 400;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 4px rgba(59, 89, 152, 0.1);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--neutral-dark);
+  font-family: var(--font-primary);
+}
+
+/* Section Spacing */
+section {
+  padding: var(--spacing-4xl) 0;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary-blue);
+  border-radius: var(--radius-full);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--neutral-gray-600);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-2xl);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+}
+
+/* Grid Layouts */
+.grid {
+  display: grid;
+  gap: var(--spacing-xl);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-primary {
+  color: var(--primary-blue);
+}
+
+.text-red {
+  color: var(--primary-red);
+}
+
+.text-green {
+  color: var(--primary-green);
+}
+
+.bg-light {
+  background: var(--neutral-gray-50);
+}
+
+.bg-white {
+  background: var(--neutral-white);
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-xl);
+  z-index: 1000;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-2xl);
+}
+
+.whatsapp-float svg {
+  width: 35px;
+  height: 35px;
+  fill: white;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  :root {
+    --font-size-5xl: 3rem;
+    --font-size-4xl: 2.25rem;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  section {
+    padding: var(--spacing-3xl) 0;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-5xl: 2.25rem;
+    --font-size-4xl: 1.875rem;
+    --font-size-3xl: 1.5rem;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .btn {
+    padding: 0.875rem 1.75rem;
+  }
+}

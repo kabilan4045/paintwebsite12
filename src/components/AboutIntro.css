@@ -1,0 +1,488 @@
+/* ========================================
+   ABOUT INTRO SECTION - YASHWANTH COLOUR COATINGS
+   Modern Corporate Design - Matching Hero Style
+   ======================================== */
+
+.about-intro {
+    position: relative;
+    padding: var(--spacing-4xl) 0;
+    background: var(--neutral-white);
+    overflow: hidden;
+}
+
+
+
+/* Container */
+.about-intro__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   SPLIT CONTENT LAYOUT
+   ======================================== */
+
+.about-intro__content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-4xl);
+    align-items: center;
+    margin-bottom: var(--spacing-4xl);
+}
+
+/* Left Column: Text Content */
+.about-intro__text-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    animation: slideInLeft 1s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.about-intro__section-title {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-md);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--primary-blue);
+    margin: 0;
+}
+
+.about-intro__company-name {
+    font-family: var(--font-display);
+    font-size: var(--font-size-4xl);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--neutral-black);
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.about-intro__body p {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-lg);
+    line-height: 1.7;
+    color: var(--neutral-gray-600);
+    margin-bottom: var(--spacing-md);
+}
+
+.about-intro__body p:last-child {
+    margin-bottom: 0;
+}
+
+.about-intro__slogan {
+    font-family: var(--font-display);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    font-style: italic;
+    color: var(--neutral-gray-800);
+    border-left: 4px solid var(--primary-green);
+    padding-left: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+}
+
+.about-intro__established {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+    font-family: var(--font-primary);
+}
+
+.about-intro__established .label {
+    font-weight: 600;
+    color: var(--neutral-gray-500);
+    text-transform: uppercase;
+    font-size: var(--font-size-sm);
+    letter-spacing: 0.05em;
+}
+
+.about-intro__established .year {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    color: var(--primary-blue);
+}
+
+/* Right Column: Image Placeholder */
+.about-intro__image-column {
+    position: relative;
+    height: 100%;
+    min-height: 300px;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    animation: slideInRight 1s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.about-intro__image {
+    width: 70%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+}
+
+/* ========================================
+   HIGHLIGHT CARDS - 3 Card Row
+   ======================================== */
+
+.about-intro__highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+    animation: fadeIn 1.4s ease-out 0.6s both;
+}
+
+.highlight-card {
+    background: var(--neutral-white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    border: 1px solid var(--neutral-gray-100);
+}
+
+/* Top Border Accent - Solid Colors */
+.highlight-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--primary-blue);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.highlight-card:nth-child(2)::before {
+    background: var(--primary-green);
+}
+
+.highlight-card:nth-child(3)::before {
+    background: var(--primary-red);
+}
+
+.highlight-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Soft Pulsing Hover Animation */
+.highlight-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--neutral-gray-200);
+    animation: cardPulse 2s ease-in-out infinite;
+}
+
+@keyframes cardPulse {
+
+    0%,
+    100% {
+        box-shadow: var(--shadow-xl);
+    }
+
+    50% {
+        box-shadow: 0 12px 50px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Card Icon */
+.highlight-card__icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--primary-blue);
+    color: var(--neutral-white);
+    transition: all 0.4s ease;
+}
+
+.highlight-card:nth-child(2) .highlight-card__icon {
+    background: var(--primary-green);
+}
+
+.highlight-card:nth-child(3) .highlight-card__icon {
+    background: var(--primary-red);
+}
+
+.highlight-card:hover .highlight-card__icon {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.highlight-card__icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* Card Title */
+.highlight-card__title {
+    font-family: var(--font-display);
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--neutral-black);
+    margin: 0 0 var(--spacing-xs);
+    letter-spacing: -0.02em;
+    transition: color 0.3s ease;
+}
+
+.highlight-card:hover .highlight-card__title {
+    color: var(--primary-blue);
+}
+
+.highlight-card:nth-child(2):hover .highlight-card__title {
+    color: var(--primary-green);
+}
+
+.highlight-card:nth-child(3):hover .highlight-card__title {
+    color: var(--primary-red);
+}
+
+/* Card Subtitle */
+.highlight-card__subtitle {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-base);
+    color: var(--neutral-gray-600);
+    margin: 0;
+    font-weight: 400;
+}
+
+/* ========================================
+   CTA BUTTONS - Matching Hero Style
+   ======================================== */
+
+.about-intro__cta {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeIn 1.6s ease-out 0.9s both;
+}
+
+.cta-button {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* Primary Button - Solid Blue */
+.cta-button--primary {
+    background: var(--primary-blue);
+    color: var(--neutral-white);
+    box-shadow: var(--shadow-md);
+}
+
+.cta-button--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    background: var(--accent-blue-light);
+}
+
+/* Secondary Button - Outline Style */
+.cta-button--secondary {
+    background: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    box-shadow: none;
+}
+
+.cta-button--secondary:hover {
+    transform: translateY(-2px);
+    background: var(--primary-blue);
+    color: var(--neutral-white);
+    box-shadow: var(--shadow-md);
+}
+
+/* Button Arrow */
+.cta-button__arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    font-size: 1.25rem;
+}
+
+.cta-button:hover .cta-button__arrow {
+    transform: translateX(5px);
+}
+
+/* Button Ripple Effect */
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.cta-button:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - Mobile First
+   ======================================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .about-intro {
+        padding: var(--spacing-3xl) 0;
+    }
+
+    .about-intro__content-wrapper {
+        gap: var(--spacing-2xl);
+    }
+
+    .about-intro__highlights {
+        gap: var(--spacing-md);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .about-intro {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .about-intro__content-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .about-intro__company-name {
+        font-size: var(--font-size-3xl);
+    }
+
+    .about-intro__image-column {
+        min-height: 250px;
+    }
+
+    .about-intro__highlights {
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .highlight-card {
+        padding: var(--spacing-lg);
+    }
+
+    .highlight-card__icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .highlight-card__icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .highlight-card__title {
+        font-size: var(--font-size-xl);
+    }
+
+    .cta-button {
+        padding: 0.875rem 1.75rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .about-intro {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .about-intro__headline {
+        font-size: var(--font-size-2xl);
+    }
+
+    .about-intro__description {
+        font-size: var(--font-size-sm);
+    }
+
+    .about-intro__highlights {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .about-intro__cta {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .cta-button {
+        width: 100%;
+        justify-content: center;
+        padding: 0.875rem 1.5rem;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1440px) {
+    .about-intro__container {
+        max-width: 1400px;
+    }
+}

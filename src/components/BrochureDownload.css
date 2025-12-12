@@ -1,0 +1,773 @@
+/* ========================================
+   BROCHURE DOWNLOAD PAGE - YASHWANTH COLOUR COATINGS
+   Premium Corporate Design with Animations
+   ======================================== */
+
+.brochure-page {
+    min-height: 100vh;
+    background: var(--neutral-gray-50);
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.brochure-hero {
+    position: relative;
+    padding: var(--spacing-4xl) 0 var(--spacing-3xl);
+    background: linear-gradient(135deg, #3b5998 0%, #2d4373 100%);
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.brochure-hero__pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(76, 175, 80, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(244, 67, 54, 0.1) 0%, transparent 50%);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.brochure-hero__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.brochure-hero__title {
+    font-family: var(--font-display);
+    font-size: var(--font-size-5xl);
+    font-weight: 800;
+    color: var(--neutral-white);
+    margin: 0 0 var(--spacing-md);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.brochure-hero__subtitle {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-xl);
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ========================================
+   MAIN CONTENT CONTAINER
+   ======================================== */
+
+.brochure-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-4xl) var(--spacing-md);
+}
+
+/* ========================================
+   BROCHURE SHOWCASE SECTION
+   ======================================== */
+
+.brochure-showcase {
+    margin-bottom: var(--spacing-4xl);
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.brochure-showcase__container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--spacing-4xl);
+    align-items: center;
+    background: var(--neutral-white);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-3xl);
+    box-shadow: var(--shadow-xl);
+}
+
+/* 3D Brochure Mockup */
+.brochure-showcase__mockup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.mockup-book {
+    position: relative;
+    width: 280px;
+    height: 360px;
+    transform-style: preserve-3d;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotateY(-15deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotateY(-15deg);
+    }
+}
+
+.mockup-book__cover {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #2d4373 100%);
+    border-radius: var(--radius-md);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.mockup-book__cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    opacity: 0.5;
+}
+
+.mockup-book__logo {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--neutral-white);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 0.05em;
+}
+
+.mockup-book__title {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--neutral-white);
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.mockup-book__year {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-top: auto;
+}
+
+/* Showcase Content */
+.brochure-showcase__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.brochure-showcase__heading {
+    font-family: var(--font-display);
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--neutral-black);
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.brochure-showcase__description {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-lg);
+    color: var(--neutral-gray-600);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.brochure-showcase__highlights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+}
+
+.highlight-item:hover {
+    background: var(--neutral-gray-50);
+    transform: translateX(5px);
+}
+
+.highlight-item__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary-blue);
+    color: var(--neutral-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all var(--transition-base);
+}
+
+.highlight-item:nth-child(2) .highlight-item__icon {
+    background: var(--primary-green);
+}
+
+.highlight-item:nth-child(3) .highlight-item__icon {
+    background: var(--primary-red);
+}
+
+.highlight-item:nth-child(4) .highlight-item__icon {
+    background: var(--primary-blue);
+}
+
+.highlight-item:nth-child(5) .highlight-item__icon {
+    background: var(--primary-green);
+}
+
+.highlight-item:hover .highlight-item__icon {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.highlight-item__icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.highlight-item span {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--neutral-gray-700);
+}
+
+/* ========================================
+   MAIN DOWNLOAD SECTION
+   ======================================== */
+
+.brochure-download {
+    margin-bottom: var(--spacing-3xl);
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.download-card {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #2d4373 100%);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-4xl) var(--spacing-3xl);
+    text-align: center;
+    box-shadow:
+        var(--shadow-2xl),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+}
+
+.download-card__icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--neutral-white);
+    position: relative;
+    z-index: 1;
+    animation: iconBounce 2s ease-in-out infinite;
+}
+
+@keyframes iconBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.download-card__icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+.download-card__title {
+    font-family: var(--font-display);
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--neutral-white);
+    margin: 0 0 var(--spacing-md);
+    position: relative;
+    z-index: 1;
+}
+
+.download-card__description {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-lg);
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 var(--spacing-2xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.download-card__button {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    padding: 1.25rem 3rem;
+    background: var(--neutral-white);
+    color: var(--primary-blue);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-base);
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.download-card__button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-2xl);
+    background: var(--primary-green);
+    color: var(--neutral-white);
+}
+
+.download-card__button svg {
+    width: 24px;
+    height: 24px;
+    transition: transform var(--transition-base);
+}
+
+.download-card__button:hover svg {
+    transform: translateY(3px);
+}
+
+/* ========================================
+   WHATSAPP SECTION
+   ======================================== */
+
+.brochure-whatsapp {
+    margin-bottom: var(--spacing-3xl);
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.whatsapp-card {
+    background: var(--neutral-white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-3xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--neutral-gray-100);
+    transition: all var(--transition-base);
+}
+
+.whatsapp-card:hover {
+    box-shadow: var(--shadow-xl);
+    border-color: #25D366;
+}
+
+.whatsapp-card__title {
+    font-family: var(--font-display);
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--neutral-black);
+    margin: 0 0 var(--spacing-xs);
+}
+
+.whatsapp-card__note {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-base);
+    color: var(--neutral-gray-500);
+    margin: 0 0 var(--spacing-xl);
+}
+
+.whatsapp-card__button {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    background: #25D366;
+    color: var(--neutral-white);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+}
+
+.whatsapp-card__button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    background: #128C7E;
+}
+
+.whatsapp-card__button svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* ========================================
+   TRUST SECTION
+   ======================================== */
+
+.brochure-trust {
+    margin-bottom: var(--spacing-3xl);
+    animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.trust-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+}
+
+.trust-card {
+    background: var(--neutral-white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    border: 1px solid var(--neutral-gray-100);
+}
+
+.trust-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-blue);
+}
+
+.trust-card:nth-child(2):hover {
+    border-color: var(--primary-green);
+}
+
+.trust-card:nth-child(3):hover {
+    border-color: var(--primary-red);
+}
+
+.trust-card__icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--spacing-md);
+    background: var(--primary-blue);
+    color: var(--neutral-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+}
+
+.trust-card:nth-child(2) .trust-card__icon {
+    background: var(--primary-green);
+}
+
+.trust-card:nth-child(3) .trust-card__icon {
+    background: var(--primary-red);
+}
+
+.trust-card:hover .trust-card__icon {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.trust-card__icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.trust-card__title {
+    font-family: var(--font-display);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--neutral-black);
+    margin: 0 0 var(--spacing-xs);
+}
+
+.trust-card__text {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-base);
+    color: var(--neutral-gray-600);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ========================================
+   INQUIRY SECTION
+   ======================================== */
+
+.brochure-inquiry {
+    animation: fadeInUp 1s ease-out 1s both;
+}
+
+.inquiry-card {
+    background: linear-gradient(135deg, var(--neutral-gray-50) 0%, var(--neutral-white) 100%);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-3xl);
+    text-align: center;
+    border: 2px solid var(--neutral-gray-200);
+}
+
+.inquiry-card__title {
+    font-family: var(--font-display);
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--neutral-black);
+    margin: 0 0 var(--spacing-md);
+}
+
+.inquiry-card__text {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-lg);
+    color: var(--neutral-gray-600);
+    margin: 0 0 var(--spacing-xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inquiry-card__button {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    transition: all var(--transition-base);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.inquiry-card__button:hover {
+    background: var(--primary-blue);
+    color: var(--neutral-white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.inquiry-card__button svg {
+    width: 20px;
+    height: 20px;
+    transition: transform var(--transition-base);
+}
+
+.inquiry-card__button:hover svg {
+    transform: translateX(5px);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .brochure-hero__title {
+        font-size: var(--font-size-4xl);
+    }
+
+    .brochure-showcase__container {
+        gap: var(--spacing-2xl);
+        padding: var(--spacing-2xl);
+    }
+
+    .trust-cards {
+        gap: var(--spacing-md);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .brochure-hero {
+        padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+    }
+
+    .brochure-hero__title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .brochure-hero__subtitle {
+        font-size: var(--font-size-lg);
+    }
+
+    .brochure-content {
+        padding: var(--spacing-2xl) var(--spacing-md);
+    }
+
+    .brochure-showcase__container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        padding: var(--spacing-xl);
+    }
+
+    .mockup-book {
+        width: 220px;
+        height: 280px;
+    }
+
+    .brochure-showcase__highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .download-card {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .download-card__title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .download-card__button {
+        padding: 1rem 2rem;
+        font-size: var(--font-size-base);
+    }
+
+    .trust-cards {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .whatsapp-card,
+    .inquiry-card {
+        padding: var(--spacing-xl);
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .brochure-hero__title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .brochure-hero__subtitle {
+        font-size: var(--font-size-base);
+    }
+
+    .mockup-book {
+        width: 180px;
+        height: 240px;
+    }
+
+    .mockup-book__logo {
+        font-size: 2rem;
+    }
+
+    .brochure-showcase__heading {
+        font-size: var(--font-size-2xl);
+    }
+
+    .download-card__button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .whatsapp-card__button {
+        width: 100%;
+        justify-content: center;
+    }
+}
