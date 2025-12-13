@@ -1,4 +1,4 @@
-In import './ProcessSteps.css';
+import './ProcessSteps.css';
 
 const ProcessSteps = () => {
     const steps = [
