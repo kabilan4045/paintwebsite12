@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import './ProductDetailPage.css';
 
@@ -6,7 +6,6 @@ import './ProductDetailPage.css';
 import epoxyCoatingImage from '../assets/Products Page  copy/Epoxy Coating.png';
 
 const ProductDetailPage = () => {
-    const { productId } = useParams();
     const [selectedImage, setSelectedImage] = useState(0);
 
     // Product data (in real app, this would come from API or props)
