@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './ProductsPage.css';
 
 // Import product images
@@ -7,43 +9,68 @@ import puEnamelImage from '../assets/Products Page  copy/PU Enamel.png';
 import epoxyCoatingImage from '../assets/Products Page  copy/Epoxy Coating.png';
 
 interface Product {
+    id: string;
     name: string;
     description: string;
     features: string[];
     sizes?: string;
     bestFor?: string;
     image: string;
+    category: string;
     tags: string[];
 }
 
 const ProductsPage = () => {
+    const [activeCategory, setActiveCategory] = useState('All');
+
     const products: Product[] = [
         {
-            name: "Auto Fine – Automotive Enamel",
-            description: "High-gloss enamel designed for smooth, durable finishes on vehicles and metal surfaces.",
+            id: 'epoxy-industrial-coat',
+            name: "Epoxy Industrial Coat",
+            description: "Heavy-duty epoxy coating for industrial machinery, floors and metal surfaces.",
             features: [
-                "Glossy showroom finish",
-                "Scratch & weather resistant",
-                "Smooth application"
+                "Corrosion-resistant",
+                "Long-lasting protection",
+                "Excellent surface hardness"
+            ],
+            sizes: "1L, 4L, 20L",
+            bestFor: "Steel structures, machinery, industrial floors",
+            image: epoxyCoatingImage,
+            category: "Industrial",
+            tags: ["Industrial"]
+        },
+        {
+            id: 'auto-fine-enamel',
+            name: "AutoFine Metallic Red",
+            description: "Premium metallic finish for automotive bodyworks.",
+            features: [
+                "UV Protection",
+                "Scratch Resistant",
+                "Deep Gloss"
             ],
             sizes: "1L, 4L, 20L",
             bestFor: "Cars, bikes, gates, metal parts",
             image: autoFineImage,
-            tags: ["Automotive", "Enamel"]
+            category: "Automotive",
+            tags: ["Automotive"]
         },
         {
-            name: "WoodCoat – High Gloss Wood Finish",
-            description: "Premium coating for wood that enhances grain and provides long-lasting shine.",
+            id: 'woodcoat-clear-gloss',
+            name: "WoodCoat Clear Gloss",
+            description: "High-gloss clear polyurethane for wooden furniture.",
             features: [
-                "Rich, glossy finish",
-                "Protects against scratches & moisture",
-                "Ideal for furniture & doors"
+                "Fast Drying",
+                "Water Resistant",
+                "Non-Yellowing"
             ],
-            sizes: "Standard wood finish pack sizes",
+            sizes: "500ml, 1L, 4L",
+            bestFor: "Furniture, doors, wooden surfaces",
             image: woodCoatImage,
-            tags: ["Wood", "Premium"]
+            category: "Wood Finishes",
+            tags: ["Wood Finishes"]
         },
         {
+            id: 'pu-enamel',
             name: "PU Enamel",
             description: "Industrial-grade enamel for superior protection on steel and metal surfaces.",
             features: [
@@ -51,79 +78,77 @@ const ProductsPage = () => {
                 "Strong adhesion",
                 "Resistant to chemicals & abrasion"
             ],
+            sizes: "1L, 4L, 20L",
             image: puEnamelImage,
+            category: "Industrial",
             tags: ["Industrial", "Metal"]
-        },
-        {
-            name: "Epoxy Coating",
-            description: "Heavy-duty coating for industrial machinery, floors and metal surfaces.",
-            features: [
-                "Corrosion-resistant",
-                "Long-lasting protection",
-                "Excellent surface hardness"
-            ],
-            image: epoxyCoatingImage,
-            tags: ["Industrial", "Heavy-Duty"]
         }
     ];
+
+    const categories = ['All', 'Industrial', 'Automotive', 'Wood Finishes', 'Decorative', 'Primers'];
+
+    const filteredProducts = activeCategory === 'All'
+        ? products
+        : products.filter(product => product.category === activeCategory);
 
     return (
         <div className="products-page">
             <div className="products-container">
-                {/* Page Header - Consistent Design */}
+                {/* Page Header */}
                 <div className="products-header">
                     <h1 className="products-title">Our Products</h1>
                     <p className="products-subtitle">
-                        Premium coating solutions for automotive, wood, and industrial applications
+                        Explore our comprehensive range of high-performance coating solutions.
                     </p>
+                </div>
+
+                {/* Category Filter Tabs */}
+                <div className="category-filters">
+                    {categories.map((category) => (
+                        <button
+                            key={category}
+                            className={`category-filter ${activeCategory === category ? 'active' : ''}`}
+                            onClick={() => setActiveCategory(category)}
+                        >
+                            {category}
+                        </button>
+                    ))}
                 </div>
 
                 {/* Products Grid */}
                 <div className="products-grid">
-                    {products.map((product, index) => (
-                        <div key={index} className="product-card">
+                    {filteredProducts.map((product) => (
+                        <div key={product.id} className="product-card">
+                            {/* Category Badge */}
+                            <div className="product-card__badge">{product.category}</div>
+
                             <div className="product-card__image">
                                 <img src={product.image} alt={product.name} />
                             </div>
 
                             <div className="product-card__content">
-                                <div className="product-card__tags">
-                                    {product.tags.map((tag, idx) => (
-                                        <span key={idx} className="product-card__tag">{tag}</span>
-                                    ))}
-                                </div>
-
                                 <div className="product-card__header">
                                     <h2 className="product-card__name">{product.name}</h2>
                                     <p className="product-card__description">{product.description}</p>
                                 </div>
 
                                 <div className="product-card__body">
-                                    <h3 className="product-card__section-title">Features:</h3>
-                                    <ul className="product-card__features">
-                                        {product.features.map((feature, idx) => (
-                                            <li key={idx}>{feature}</li>
+                                    <div className="product-card__tags">
+                                        {product.features.slice(0, 3).map((feature, idx) => (
+                                            <span key={idx} className="product-card__tag">{feature}</span>
                                         ))}
-                                    </ul>
-
-                                    {product.sizes && (
-                                        <div className="product-card__info">
-                                            <span className="product-card__label">Sizes:</span>
-                                            <span className="product-card__value">{product.sizes}</span>
-                                        </div>
-                                    )}
-
-                                    {product.bestFor && (
-                                        <div className="product-card__info">
-                                            <span className="product-card__label">Best For:</span>
-                                            <span className="product-card__value">{product.bestFor}</span>
-                                        </div>
-                                    )}
+                                    </div>
                                 </div>
 
-                                <button className="product-card__button">
-                                    Enquire Now
-                                </button>
+                                <Link
+                                    to={`/products/${product.id}`}
+                                    className="product-card__button"
+                                >
+                                    View Details
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </Link>
                             </div>
                         </div>
                     ))}

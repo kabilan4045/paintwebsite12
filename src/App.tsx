@@ -7,6 +7,7 @@ import BrochurePage from './pages/BrochurePage';
 import FAQPage from './pages/FAQPage';
 import GalleryPage from './pages/GalleryPage';
 import ProductsPage from './pages/ProductsPage';
+import ProductDetailPage from './pages/ProductDetailPage';
 import ServicesPage from './pages/ServicesPage';
 import AboutPage from './pages/AboutPage';
 import WhatsAppWidget from './components/WhatsAppWidget';
@@ -26,6 +27,7 @@ function App() {
             <Route path="/faqs" element={<FAQPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/products" element={<ProductsPage />} />
+            <Route path="/products/:productId" element={<ProductDetailPage />} />
             <Route path="/services" element={<ServicesPage />} />
           </Routes>
         </main>
