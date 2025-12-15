@@ -32,15 +32,37 @@
 }
 
 :root {
-  /* Brand Colors - Solid, No Gradients */
-  --primary-red: #E53935;
-  --primary-blue: #3B5998;
-  --primary-green: #4CAF50;
-  --primary-teal: #4DB6AC;
+  /* 🎨 VIBRANT PAINT BRAND COLORS */
+  --primary-red: #FF3B30;
+  --primary-blue: #007AFF;
+  --primary-green: #34C759;
+  --primary-teal: #5AC8FA;
+  --primary-orange: #FF9500;
+  --primary-purple: #AF52DE;
+  --primary-pink: #FF2D55;
+  --primary-yellow: #FFCC00;
 
-  --accent-red-light: #EF5350;
-  --accent-blue-light: #5C7BC4;
-  --accent-green-light: #66BB6A;
+  /* Accent Colors - Lighter Variations */
+  --accent-red-light: #FF6B6B;
+  --accent-blue-light: #4DA6FF;
+  --accent-green-light: #6DD58C;
+  --accent-teal-light: #85D7FF;
+  --accent-orange-light: #FFB84D;
+  --accent-purple-light: #C77DFF;
+
+  /* 🌈 VIBRANT GRADIENTS */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-sunset: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 100%);
+  --gradient-ocean: linear-gradient(135deg, #4DA6FF 0%, #5AC8FA 100%);
+  --gradient-forest: linear-gradient(135deg, #34C759 0%, #30E3CA 100%);
+  --gradient-fire: linear-gradient(135deg, #FF3B30 0%, #FF9500 100%);
+  --gradient-rainbow: linear-gradient(135deg, #FF3B30 0%, #FF9500 25%, #FFCC00 50%, #34C759 75%, #007AFF 100%);
+  --gradient-purple: linear-gradient(135deg, #AF52DE 0%, #FF2D55 100%);
+
+  /* Background Gradients - Subtle */
+  --bg-gradient-light: linear-gradient(135deg, #F0F9FF 0%, #FFF5F5 100%);
+  --bg-gradient-warm: linear-gradient(135deg, #FFF5EB 0%, #FFF0F5 100%);
+  --bg-gradient-cool: linear-gradient(135deg, #F0F9FF 0%, #F0FFF4 100%);
 
   /* Neutral Colors */
   --neutral-white: #FFFFFF;
@@ -88,13 +110,15 @@
   --radius-2xl: 1.5rem;
   --radius-full: 9999px;
 
-  /* Shadows - Premium, Subtle */
+  /* Enhanced Shadows - More Vibrant */
   --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-colored: 0 10px 40px -10px rgba(102, 126, 234, 0.4);
+  --shadow-colored-lg: 0 20px 60px -15px rgba(102, 126, 234, 0.5);
 
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -198,7 +222,7 @@ a:hover {
   max-width: 1400px;
 }
 
-/* Premium Buttons */
+/* Premium Buttons - Vibrant Gradients */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -217,51 +241,89 @@ a:hover {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   font-size: var(--font-size-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
 }
 
 .btn-primary {
-  background: var(--primary-blue);
+  background: var(--gradient-ocean);
   color: var(--neutral-white);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-colored);
 }
 
 .btn-primary:hover {
-  background: var(--accent-blue-light);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-colored-lg);
 }
 
 .btn-secondary {
-  background: var(--primary-teal);
+  background: var(--gradient-forest);
   color: var(--neutral-white);
+  box-shadow: 0 4px 15px rgba(52, 199, 89, 0.3);
 }
 
 .btn-secondary:hover {
-  background: var(--accent-green-light);
   transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(52, 199, 89, 0.4);
 }
 
 .btn-outline {
   background: transparent;
   border: 2px solid var(--primary-blue);
   color: var(--primary-blue);
+  position: relative;
+  z-index: 1;
+}
+
+.btn-outline::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--gradient-ocean);
+  transition: width 0.3s ease;
+  z-index: -1;
+  border-radius: var(--radius-md);
+}
+
+.btn-outline:hover::after {
+  width: 100%;
 }
 
 .btn-outline:hover {
-  background: var(--primary-blue);
   color: var(--neutral-white);
+  border-color: transparent;
 }
 
 .btn-whatsapp {
-  background: #25D366;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
   color: var(--neutral-white);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
 }
 
 .btn-whatsapp:hover {
-  background: #20BA5A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
 }
 
-/* Cards */
+/* Cards - Enhanced with Color Accents */
 .card {
   background: var(--neutral-white);
   border-radius: var(--radius-xl);
@@ -270,6 +332,24 @@ a:hover {
   transition: all var(--transition-base);
   height: 100%;
   border: 1px solid var(--neutral-gray-100);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-rainbow);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .card:hover {
@@ -338,8 +418,9 @@ section {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: var(--primary-blue);
+  background: var(--gradient-rainbow);
   border-radius: var(--radius-full);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
 }
 
 .section-subtitle {

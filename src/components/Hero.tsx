@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
             subtitle: 'Perfect Finishes.',
             highlight: 'Trusted Quality.',
             description: 'Yashwanth Colour Coatings is a trusted manufacturer of high-performance industrial, automotive, wood, and decorative coatings with 30+ years of experience.',
-            color: '#4CAF50' // Green
+            color: '#34C759' // Vibrant Green
         },
         {
             id: 2,
@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
             subtitle: 'Superior Protection.',
             highlight: 'Built to Last.',
             description: 'Professional-grade industrial coatings designed for factories, warehouses, and heavy machinery with exceptional durability.',
-            color: '#3B5998' // Blue
+            color: '#007AFF' // Vibrant Blue
         },
         {
             id: 3,
@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
             subtitle: 'Showroom Shine.',
             highlight: 'Perfect Gloss.',
             description: 'High-gloss automotive paints and enamels for cars, bikes, and metal surfaces with superior finish and protection.',
-            color: '#E53935' // Red
+            color: '#FF3B30' // Vibrant Red
         },
         {
             id: 4,
@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
             subtitle: 'Natural Beauty.',
             highlight: 'Premium Quality.',
             description: 'Specialized wood coatings that enhance grain, provide rich color, and protect furniture and wooden surfaces.',
-            color: '#FF9800' // Orange
+            color: '#FF9500' // Vibrant Orange
         }
     ];
 

@@ -6,7 +6,7 @@
 .about-intro {
     position: relative;
     padding: var(--spacing-4xl) 0;
-    background: var(--neutral-white);
+    background: var(--bg-gradient-cool);
     overflow: hidden;
 }
 
@@ -186,7 +186,7 @@
     border: 1px solid var(--neutral-gray-100);
 }
 
-/* Top Border Accent - Solid Colors */
+/* Top Border Accent - Vibrant Gradients */
 .highlight-card::before {
     content: '';
     position: absolute;
@@ -194,17 +194,17 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: var(--primary-blue);
+    background: var(--gradient-ocean);
     transform: scaleX(0);
     transition: transform 0.4s ease;
 }
 
 .highlight-card:nth-child(2)::before {
-    background: var(--primary-green);
+    background: var(--gradient-forest);
 }
 
 .highlight-card:nth-child(3)::before {
-    background: var(--primary-red);
+    background: var(--gradient-fire);
 }
 
 .highlight-card:hover::before {
@@ -231,7 +231,7 @@
     }
 }
 
-/* Card Icon */
+/* Card Icon - Vibrant Gradients */
 .highlight-card__icon {
     width: 64px;
     height: 64px;
@@ -240,21 +240,25 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: var(--primary-blue);
+    background: var(--gradient-ocean);
     color: var(--neutral-white);
     transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
 }
 
 .highlight-card:nth-child(2) .highlight-card__icon {
-    background: var(--primary-green);
+    background: var(--gradient-forest);
+    box-shadow: 0 4px 15px rgba(52, 199, 89, 0.3);
 }
 
 .highlight-card:nth-child(3) .highlight-card__icon {
-    background: var(--primary-red);
+    background: var(--gradient-fire);
+    box-shadow: 0 4px 15px rgba(255, 59, 48, 0.3);
 }
 
 .highlight-card:hover .highlight-card__icon {
     transform: rotate(360deg) scale(1.1);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
 .highlight-card__icon svg {
@@ -325,17 +329,16 @@
     white-space: nowrap;
 }
 
-/* Primary Button - Solid Blue */
+/* Primary Button - Vibrant Gradient */
 .cta-button--primary {
-    background: var(--primary-blue);
+    background: var(--gradient-ocean);
     color: var(--neutral-white);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-colored);
 }
 
 .cta-button--primary:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-    background: var(--accent-blue-light);
+    box-shadow: var(--shadow-colored-lg);
 }
 
 /* Secondary Button - Outline Style */
