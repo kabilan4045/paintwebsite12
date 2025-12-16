@@ -6,34 +6,42 @@
    CONTACT PAGE
    ======================================== */
 
-/* Page Header - Consistent Design */
+/* Page Header - Orange/Red Gradient Banner - Full Width */
 .contact-page-header {
+    background: linear-gradient(135deg, #FF9500 0%, #FF3B30 100%);
+    padding: 4rem 2rem;
+    margin: 0 0 var(--spacing-3xl) 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
     text-align: center;
-    padding: var(--spacing-3xl) 0 var(--spacing-xl);
-    background: var(--neutral-white);
 }
 
 .contact-page-title {
     font-family: var(--font-display);
     font-size: var(--font-size-5xl);
-    font-weight: 300;
-    color: var(--neutral-black);
-    margin: 0;
-    position: relative;
-    display: inline-block;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 var(--spacing-md) 0;
 }
 
-/* Blue underline - consistent with FAQ, Gallery, and Brochure */
+/* Remove blue underline */
 .contact-page-title::after {
-    content: '';
-    position: absolute;
-    bottom: -1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: var(--primary-blue);
-    border-radius: var(--radius-full);
+    display: none;
+}
+
+.contact-page-subtitle {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-lg);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
 /* ========================================
@@ -42,6 +50,7 @@
 
 .contact-page {
     background: var(--neutral-white);
+    padding: 0;
 }
 
 /* ========================================

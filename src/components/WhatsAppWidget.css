@@ -29,24 +29,35 @@
     padding: 1.25rem 1.5rem;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
 }
 
 .header-content {
     display: flex;
     gap: 1rem;
     flex: 1;
+    align-items: center;
 }
 
 .company-avatar {
-    width: 48px;
-    height: 48px;
-    background: rgba(255, 255, 255, 0.2);
+    width: 50px;
+    height: 50px;
+    background: var(--neutral-white);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.company-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .company-avatar svg {
@@ -55,11 +66,19 @@
     color: var(--neutral-white);
 }
 
+.header-info {
+    flex: 1;
+    min-width: 0;
+}
+
 .header-info h3 {
     font-size: 1rem;
     font-weight: 700;
-    margin-bottom: 0.25rem;
+    margin: 0 0 0.25rem 0;
     color: var(--neutral-white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .header-info p {
@@ -67,19 +86,40 @@
     opacity: 0.9;
     color: var(--neutral-white);
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .close-btn {
-    background: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--neutral-white);
     border: none;
-    color: var(--neutral-white);
+    color: #25D366;
     cursor: pointer;
-    padding: 0.25rem;
-    transition: opacity var(--transition-base);
+    padding: 0.4rem;
+    transition: all var(--transition-base);
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
 }
 
 .close-btn:hover {
-    opacity: 0.8;
+    background: #f0f0f0;
+    transform: scale(1.15);
+}
+
+.close-btn svg {
+    width: 18px;
+    height: 18px;
 }
 
 .widget-body {
@@ -92,27 +132,47 @@
 
 .chat-message {
     display: flex;
-    justify-content: flex-start;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+
+.message-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: var(--neutral-white);
+}
+
+.message-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.message-content {
+    flex: 1;
+    max-width: 75%;
 }
 
 .message-bubble {
     background: var(--neutral-white);
-    padding: 0.875rem 1rem;
-    border-radius: var(--radius-lg);
-    max-width: 85%;
+    padding: 0.75rem 1rem;
+    border-radius: 0 var(--radius-lg) var(--radius-lg) var(--radius-lg);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 
-.message-bubble p {
+.message-text {
     margin: 0 0 0.5rem 0;
     color: var(--neutral-dark);
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     line-height: 1.5;
 }
 
-.message-bubble p:last-of-type {
-    margin-bottom: 0.75rem;
+.message-text:last-of-type {
+    margin-bottom: 0.5rem;
 }
 
 .message-time {

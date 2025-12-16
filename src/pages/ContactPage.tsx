@@ -46,6 +46,9 @@ const ContactPage = () => {
             {/* Page Header */}
             <div className="contact-page-header">
                 <h1 className="contact-page-title">Contact Us</h1>
+                <p className="contact-page-subtitle">
+                    We're here to help! Reach out to us for any inquiries or support
+                </p>
             </div>
 
             {/* Get In Touch Section */}

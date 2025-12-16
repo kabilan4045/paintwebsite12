@@ -1,33 +1,28 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import './ProductDetailPage.css';
-
-// Import product images
-import epoxyCoatingImage from '../assets/Products Page  copy/Epoxy Coating.png';
+import { getProductById } from '../data/products';
+import checkMarkIcon from '../check-mark.png';
 
 const ProductDetailPage = () => {
+    const { productId } = useParams<{ productId: string }>();
     const [selectedImage, setSelectedImage] = useState(0);
 
-    // Product data (in real app, this would come from API or props)
-    const product = {
-        id: 'epoxy-industrial-coat',
-        name: 'Epoxy Industrial Coat',
-        description: 'A high-performance two-component epoxy coating designed for severe industrial environments. Provides excellent resistance to chemicals, abrasion, and impact.',
-        category: 'Industrial',
-        images: [epoxyCoatingImage, epoxyCoatingImage, epoxyCoatingImage],
-        keyFeatures: [
-            'Superior chemical resistance',
-            'Excellent abrasion resistance',
-            'High gloss retention',
-            'Suitable for steel and concrete'
-        ],
-        specifications: {
-            'Finish': 'Glossy',
-            'Drying Time': '4-8 Hours',
-            'Coverage': '10-12 sq.m/liter',
-            'Pack Sizes': '1L, 4L, 20L'
-        }
-    };
+    // Get product data by ID from URL
+    const product = productId ? getProductById(productId) : null;
+
+    // If product not found, show error
+    if (!product) {
+        return (
+            <div className="product-detail-page">
+                <div className="product-detail-container">
+                    <h1>Product Not Found</h1>
+                    <p>The product you're looking for doesn't exist.</p>
+                    <Link to="/products">Back to Products</Link>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="product-detail-page">
@@ -75,25 +70,41 @@ const ProductDetailPage = () => {
                             <ul className="features-list">
                                 {product.keyFeatures.map((feature, index) => (
                                     <li key={index}>
-                                        <svg viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-                                        </svg>
+                                        <img src={checkMarkIcon} alt="check" />
                                         {feature}
                                     </li>
                                 ))}
                             </ul>
                         </div>
 
+                        {/* Ideal Applications */}
+                        <div className="product-section-single">
+                            <h3 className="section-title-centered">Ideal Applications</h3>
+                            <div className="applications-grid">
+                                {product.idealApplications.map((application, index) => (
+                                    <div key={index} className="application-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                                        </svg>
+                                        <span>{application}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
                         {/* CTA Buttons */}
                         <div className="product-actions">
                             <button className="btn-enquire">
                                 Enquire Now
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
                             </button>
                             <button className="btn-download">
+                                Download Brochure
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
                                 </svg>
-                                Download Brochure
                             </button>
                         </div>
                     </div>

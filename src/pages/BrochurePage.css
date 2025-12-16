@@ -5,7 +5,7 @@
 .brochure-page {
     min-height: 100vh;
     background: var(--neutral-gray-50);
-    padding: var(--spacing-4xl) 0;
+    padding: 0;
 }
 
 .brochure-container {
@@ -14,42 +14,42 @@
     padding: 0 var(--spacing-md);
 }
 
-/* Header */
+/* Header - Purple Gradient Banner - Full Width */
 .brochure-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 4rem 2rem;
+    margin: 0 0 var(--spacing-3xl) 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
     text-align: center;
-    margin-bottom: var(--spacing-3xl);
 }
 
 .brochure-title {
     font-family: var(--font-display);
     font-size: var(--font-size-5xl);
-    font-weight: 300;
-    color: var(--neutral-black);
-    margin-bottom: var(--spacing-sm);
-    position: relative;
-    display: inline-block;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 var(--spacing-md) 0;
 }
 
-/* Blue underline - consistent with FAQ and Gallery */
+/* Remove blue underline */
 .brochure-title::after {
-    content: '';
-    position: absolute;
-    bottom: -1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: var(--primary-blue);
-    border-radius: var(--radius-full);
+    display: none;
 }
 
 .brochure-subtitle {
     font-family: var(--font-secondary);
     font-size: var(--font-size-lg);
     font-weight: 400;
-    color: var(--neutral-gray-600);
-    max-width: 600px;
-    margin: var(--spacing-xl) auto 0;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
 /* Grid */

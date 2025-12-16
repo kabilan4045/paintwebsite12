@@ -38,31 +38,35 @@ const FAQPage = () => {
 
     return (
         <div className="faq-page">
+            <div className="faq-header">
+                <h1 className="faq-title">Frequently Asked Questions</h1>
+                <p className="faq-subtitle">
+                    Find answers to common questions about our products and services
+                </p>
+            </div>
+
             <div className="faq-container">
-                <h1 className="faq-title">FAQs</h1>
-
-                <div className="faq-list">
-                    {faqs.map((faq, index) => (
-                        <div
-                            key={index}
-                            className={`faq-item ${openIndex === index ? 'faq-item--open' : ''}`}
+                <div className="faq-list">{faqs.map((faq, index) => (
+                    <div
+                        key={index}
+                        className={`faq-item ${openIndex === index ? 'faq-item--open' : ''}`}
+                    >
+                        <button
+                            className="faq-question"
+                            onClick={() => toggleFAQ(index)}
+                            aria-expanded={openIndex === index}
                         >
-                            <button
-                                className="faq-question"
-                                onClick={() => toggleFAQ(index)}
-                                aria-expanded={openIndex === index}
-                            >
-                                <span className="faq-question__text">{faq.question}</span>
-                                <span className="faq-question__icon">
-                                    {openIndex === index ? '−' : '+'}
-                                </span>
-                            </button>
+                            <span className="faq-question__text">{faq.question}</span>
+                            <span className="faq-question__icon">
+                                {openIndex === index ? '−' : '+'}
+                            </span>
+                        </button>
 
-                            <div className={`faq-answer ${openIndex === index ? 'faq-answer--open' : ''}`}>
-                                <p>{faq.answer}</p>
-                            </div>
+                        <div className={`faq-answer ${openIndex === index ? 'faq-answer--open' : ''}`}>
+                            <p>{faq.answer}</p>
                         </div>
-                    ))}
+                    </div>
+                ))}
                 </div>
             </div>
         </div>

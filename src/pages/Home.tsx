@@ -1,13 +1,13 @@
-import Hero from '../components/Hero';
-import AboutIntro from '../components/AboutIntro';
-import ProductsShowcase from '../components/ProductsShowcase';
+import './Home.css';
 
 const Home = () => {
     return (
-        <div>
-            <Hero />
-            <AboutIntro />
-            <ProductsShowcase />
+        <div className="maintenance-page">
+            <div className="maintenance-content">
+                <h1>🎨</h1>
+                <h2>Under Maintenance</h2>
+                <p>We're currently updating our website. Please check back soon!</p>
+            </div>
         </div>
     );
 };

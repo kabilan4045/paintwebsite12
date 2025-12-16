@@ -19,64 +19,92 @@ interface Service {
 const ServicesPage = () => {
     const services: Service[] = [
         {
-            title: "Industrial Painting",
-            description: "Durable coatings for factories, warehouses and machinery.",
+            title: "Industrial Painting Services",
+            description: "We provide heavy-duty industrial painting solutions designed to protect steel, machinery, and industrial surfaces from corrosion, abrasion, and harsh environmental conditions.",
             image: industrialPaintingImage,
-            tags: ["Industrial", "Commercial"],
+            tags: ["Industrial", "Heavy-Duty"],
             features: [
-                "Heavy-duty protective coatings",
-                "Corrosion resistance",
-                "Long-lasting durability"
+                "Epoxy industrial coatings",
+                "PU enamel & polyurethane coatings",
+                "Industrial primers & undercoats",
+                "Protective & anti-corrosion systems"
             ],
-            idealFor: "Factories, warehouses, machinery"
+            idealFor: "Factories, warehouses, machinery, steel structures, industrial floors"
         },
         {
-            title: "Automotive Painting",
-            description: "High-shine automotive enamel finishing for cars, bikes and metal parts.",
+            title: "Automotive Painting Services",
+            description: "Our automotive painting services deliver high-gloss enamel finishes for automobiles and metal parts with smooth flow and professional application.",
             image: automotivePaintingImage,
             tags: ["Automotive", "Premium"],
             features: [
-                "Showroom-quality finish",
-                "Weather & scratch resistant",
-                "Professional application"
+                "Synthetic enamel automotive coatings",
+                "Metallic & solid colour finishes",
+                "Clear coating for gloss enhancement",
+                "Professional spray application"
             ],
-            idealFor: "Cars, bikes, gates, metal parts"
+            idealFor: "Cars, bikes, auto body parts, metal gates, decorative metal items"
         },
         {
             title: "Wood Coating Services",
-            description: "Premium finishes for doors, furniture and wooden décor.",
+            description: "We offer premium wood coating services to enhance the beauty, durability, and lifespan of wooden surfaces using melamine and PU coating systems.",
             image: woodCoatingImage,
             tags: ["Wood", "Interior"],
             features: [
-                "Enhances natural grain",
-                "Moisture protection",
-                "Rich, glossy finish"
+                "Melamine glossy & matt finishes",
+                "PU clear coatings",
+                "Wood sealers & base coats",
+                "Smooth sanding & finishing"
             ],
-            idealFor: "Doors, furniture, wooden décor"
+            idealFor: "Doors, furniture, cabinets, wardrobes, interior wooden décor"
         },
         {
-            title: "Colour Consultation",
-            description: "Guidance to choose the right finish, shade and coating solution.",
+            title: "Decorative Painting Services",
+            description: "Our decorative painting solutions combine aesthetic appeal with durability, suitable for both interior and exterior applications.",
             image: colourConsultationImage,
-            tags: ["Consultation", "Expert"],
+            tags: ["Decorative", "Aesthetic"],
             features: [
-                "Professional color matching",
-                "Finish recommendations",
-                "Custom solutions"
+                "High-gloss enamel coatings",
+                "Decorative finishes for metal & wood",
+                "Smooth and uniform surface finishing"
             ],
-            idealFor: "All projects requiring expert advice"
+            idealFor: "Commercial spaces, showrooms, metal furniture, decorative surfaces"
         },
         {
             title: "Surface Preparation & Priming",
-            description: "Ensuring smooth base and long-lasting results.",
+            description: "Proper surface preparation is the foundation of every long-lasting coating. We ensure professional priming and preparation before applying any finish.",
             image: surfacePreparationImage,
             tags: ["Preparation", "Essential"],
             features: [
-                "Thorough surface cleaning",
-                "Professional priming",
-                "Quality assurance"
+                "Surface cleaning & degreasing",
+                "Rust removal & sanding",
+                "Industrial primers & wood sealers",
+                "Quality surface inspection"
             ],
-            idealFor: "All coating applications"
+            idealFor: "All coating and painting applications"
+        },
+        {
+            title: "Specialty Coating Services",
+            description: "We provide specialty coatings for decorative and functional requirements on industrial metal surfaces.",
+            image: industrialPaintingImage,
+            tags: ["Specialty", "Custom"],
+            features: [
+                "Hammertone textured finishes",
+                "Specialty industrial enamels",
+                "Custom shade & finish solutions"
+            ],
+            idealFor: "Electrical panels, machinery, metal cabinets, industrial furniture"
+        },
+        {
+            title: "Colour Consultation & Finish Guidance",
+            description: "Choosing the right coating system is crucial. Our experts provide professional colour and finish consultation to ensure the best results.",
+            image: colourConsultationImage,
+            tags: ["Consultation", "Expert"],
+            features: [
+                "Colour shade selection",
+                "Finish recommendations (Gloss / Matt / Texture)",
+                "Product & coating system guidance"
+            ],
+            idealFor: "Industrial, automotive, wood, and decorative projects"
         }
     ];
 

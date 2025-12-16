@@ -2,13 +2,16 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: var(--neutral-white);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #e0f2fe 100%);
     transition: all var(--transition-base);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 122, 255, 0.1);
+    padding: 10px 0;
 }
 
 .header-scrolled {
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
-    border-bottom-color: transparent;
+    box-shadow: 0 4px 20px rgba(0, 122, 255, 0.15);
+    border-bottom-color: rgba(0, 122, 255, 0.2);
 }
 
 .header-content {
@@ -70,6 +73,14 @@
     justify-content: center;
 }
 
+.mobile-menu-links {
+    display: contents;
+}
+
+.mobile-menu-footer {
+    display: none;
+}
+
 .nav-link {
     color: var(--neutral-dark);
     text-decoration: none;
@@ -81,6 +92,10 @@
     font-family: var(--font-primary);
     letter-spacing: 0.02em;
     white-space: nowrap;
+}
+
+.nav-link svg {
+    display: none;
 }
 
 .nav-link::after {
@@ -116,7 +131,7 @@
     align-items: center;
     justify-content: center;
     padding: 0.75rem 2rem;
-    background: var(--primary-blue);
+    background: #E52E41;
     color: var(--neutral-white);
     text-decoration: none;
     font-family: var(--font-primary);
@@ -125,14 +140,15 @@
     letter-spacing: 0.03em;
     border-radius: var(--radius-md);
     transition: all var(--transition-base);
-    box-shadow: 0 2px 8px rgba(59, 89, 152, 0.2);
+    box-shadow: 0 2px 8px rgba(229, 46, 65, 0.3);
     white-space: nowrap;
 }
 
 .btn-cta:hover {
-    background: var(--accent-blue-light);
+    background: #C41E3A;
+    color: var(--neutral-white);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(59, 89, 152, 0.3);
+    box-shadow: 0 4px 12px rgba(229, 46, 65, 0.4);
 }
 
 .mobile-menu-toggle {
@@ -189,8 +205,20 @@
 }
 
 @media (max-width: 768px) {
+    .header .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
     .header-content {
         padding: 0.75rem 0;
+        justify-content: space-between;
+        gap: var(--spacing-sm);
+    }
+
+    .logo {
+        flex-shrink: 0;
+        padding-left: 0.5rem;
     }
 
     .logo img {
@@ -205,8 +233,16 @@
         font-size: 0.6875rem;
     }
 
+    .header-actions {
+        flex: 1;
+        justify-content: center;
+        gap: var(--spacing-sm);
+    }
+
     .mobile-menu-toggle {
         display: flex;
+        flex-shrink: 0;
+        padding-right: 0.5rem;
     }
 
     .nav {
@@ -232,45 +268,132 @@
         position: absolute;
         top: var(--spacing-md);
         right: var(--spacing-md);
-        background: none;
-        border: none;
+        background: var(--neutral-white);
+        border: 2px solid var(--primary-red);
         cursor: pointer;
-        padding: 0.5rem;
-        border-radius: var(--radius-sm);
+        padding: 0;
+        border-radius: 50%;
         transition: all var(--transition-base);
         width: 40px;
         height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .mobile-menu-close:hover {
-        background: var(--neutral-gray-100);
+        background: var(--primary-red);
     }
 
     .mobile-menu-close svg {
-        width: 24px;
-        height: 24px;
-        color: var(--neutral-black);
+        width: 20px;
+        height: 20px;
+        color: var(--primary-red);
+        transition: color var(--transition-base);
+    }
+
+    .mobile-menu-close:hover svg {
+        color: var(--neutral-white);
     }
 
     .nav-open {
         right: 0;
     }
 
+    .mobile-menu-links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
     .nav-link {
         width: 100%;
-        padding: 1rem 0;
-        font-size: 0.9375rem;
-        border-bottom: 1px solid var(--neutral-gray-100);
-        font-weight: 600;
+        padding: 0.625rem 0;
+        font-size: 1rem;
+        border-bottom: none;
+        font-weight: 500;
+        text-align: left;
+        color: var(--neutral-gray-600);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .nav-link svg {
+        flex-shrink: 0;
+        stroke: var(--neutral-gray-400);
+        transition: stroke var(--transition-base);
     }
 
     .nav-link::after {
-        left: 0;
-        transform: none;
+        display: none;
     }
 
-    .nav-link:hover::after {
-        width: 50px;
+    .nav-link:hover {
+        color: var(--primary-red);
+    }
+
+    .nav-link:hover svg {
+        stroke: var(--primary-red);
+    }
+
+    .mobile-menu-footer {
+        margin-top: var(--spacing-xl);
+        padding-top: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .mobile-cta-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: #E52E41;
+        color: #FFFFFF;
+        text-decoration: none;
+        font-family: var(--font-primary);
+        font-weight: 600;
+        font-size: 0.875rem;
+        border-radius: var(--radius-md);
+        transition: all var(--transition-base);
+        box-shadow: 0 2px 8px rgba(229, 46, 65, 0.3);
+    }
+
+    .mobile-cta-button:hover {
+        background: #d02739;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(229, 46, 65, 0.4);
+    }
+
+    .mobile-cta-button svg {
+        flex-shrink: 0;
+    }
+
+    .mobile-email {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.75rem;
+        color: var(--neutral-gray-600);
+        text-decoration: none;
+        font-family: var(--font-primary);
+        font-weight: 400;
+        font-size: 0.875rem;
+        transition: color var(--transition-base);
+    }
+
+    .mobile-email:hover {
+        color: var(--primary-blue);
+    }
+
+    .mobile-email svg {
+        flex-shrink: 0;
+        stroke: currentColor;
     }
 
     .btn-cta {
