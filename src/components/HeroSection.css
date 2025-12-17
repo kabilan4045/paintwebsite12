@@ -1,0 +1,472 @@
+.hero-section {
+    padding: 8rem 0 6rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.8s ease;
+}
+
+.hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Text */
+.hero-text {
+    animation: fadeInLeft 0.8s ease-out;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-title .highlight-text {
+    color: white;
+    font-weight: 900;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    max-width: 550px;
+}
+
+/* Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.hero-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hero-btn-primary {
+    background: rgba(255, 255, 255, 0.95);
+    color: #1a1a2e;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: white;
+}
+
+.hero-btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.hero-btn-secondary:hover {
+    background: white;
+    color: #1a1a2e;
+}
+
+/* Visual */
+.hero-visual {
+    position: relative;
+    height: 500px;
+    animation: fadeInRight 0.8s ease-out;
+}
+
+/* Paint Splashes */
+.paint-splash {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: float 6s ease-in-out infinite;
+}
+
+.paint-splash-1 {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.3);
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.paint-splash-2 {
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.25);
+    top: 40%;
+    right: 20%;
+    animation-delay: 1s;
+}
+
+.paint-splash-3 {
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.2);
+    bottom: 20%;
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.paint-splash-4 {
+    width: 180px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.3);
+    top: 60%;
+    right: 10%;
+    animation-delay: 1.5s;
+}
+
+/* Paint Brushes */
+.paint-brush {
+    position: absolute;
+    opacity: 0.8;
+    animation: paintBrush 10s ease-in-out infinite;
+    filter: drop-shadow(0 4px 15px rgba(255, 255, 255, 0.3));
+}
+
+.brush-1 {
+    top: 10%;
+    right: 20%;
+    animation-delay: 0s;
+}
+
+.brush-2 {
+    top: 50%;
+    left: 15%;
+    animation-delay: 3s;
+}
+
+.brush-3 {
+    bottom: 20%;
+    right: 30%;
+    animation-delay: 6s;
+}
+
+/* Paint Splashes */
+.paint-splash {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: float 6s ease-in-out infinite;
+}
+
+.paint-splash-1 {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.3);
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.paint-splash-2 {
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.25);
+    top: 40%;
+    right: 20%;
+    animation-delay: 1s;
+}
+
+.paint-splash-3 {
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.2);
+    bottom: 20%;
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.paint-splash-4 {
+    width: 180px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.3);
+    top: 60%;
+    right: 10%;
+    animation-delay: 1.5s;
+}
+
+.paint-splash-1 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.paint-splash-2 {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
+    top: 40%;
+    right: 20%;
+    animation-delay: 1s;
+}
+
+.paint-splash-3 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #EC4899 0%, #F472B6 100%);
+    bottom: 20%;
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.paint-splash-4 {
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+    top: 60%;
+    right: 10%;
+    animation-delay: 1.5s;
+}
+
+/* Floating Elements */
+.floating-element {
+    position: absolute;
+    color: white;
+    animation: floatRotate 8s ease-in-out infinite;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+}
+
+.floating-1 {
+    top: 15%;
+    right: 25%;
+    animation-delay: 0s;
+}
+
+.floating-2 {
+    top: 50%;
+    left: 20%;
+    animation-delay: 1s;
+}
+
+.floating-3 {
+    bottom: 25%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+/* Slide Indicators */
+.slide-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 10;
+}
+
+.slide-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slide-dot.active {
+    background: white;
+    width: 40px;
+    border-radius: 6px;
+}
+
+.slide-dot:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-20px) scale(1.05);
+    }
+}
+
+@keyframes paintBrush {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+    }
+
+    25% {
+        transform: translateY(-30px) rotate(-15deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(10deg);
+        opacity: 0.9;
+    }
+
+    75% {
+        transform: translateY(-40px) rotate(-5deg);
+        opacity: 0.85;
+    }
+}
+
+@keyframes floatRotate {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(10deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+    }
+
+    .hero-stat-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 5rem 0 4rem;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-stats {
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .hero-stat-item {
+        text-align: center;
+    }
+
+    .hero-visual {
+        height: 300px;
+    }
+
+    .paint-splash {
+        filter: blur(60px);
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .hero-btn {
+        padding: 0.875rem 2rem;
+        font-size: 0.9rem;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .hero-stat-number {
+        font-size: 1.75rem;
+    }
+
+    .hero-stat-label {
+        font-size: 0.85rem;
+    }
+
+    .hero-visual {
+        height: 250px;
+    }
+}

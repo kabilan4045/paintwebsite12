@@ -1,0 +1,207 @@
+.why-choose-us {
+    padding: 5rem 0;
+    background-image: url('/src/assets/the-sky-is-PYQ74BD (1).jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .why-choose-us {
+        padding: 3rem 0;
+        background-attachment: scroll;
+    }
+}
+
+.why-choose-us::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(62, 191, 176, 0.75) 0%, rgba(43, 168, 157, 0.75) 100%);
+    pointer-events: none;
+}
+
+.why-choose-us-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.why-choose-us-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    margin-bottom: 4rem;
+    line-height: 1.3;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.why-choose-us-title .gradient-text {
+    background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.feature-icon {
+    flex-shrink: 0;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover .feature-icon {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05) rotate(5deg);
+}
+
+.feature-icon svg {
+    width: 36px;
+    height: 36px;
+}
+
+.feature-content {
+    flex: 1;
+}
+
+.feature-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.3;
+}
+
+.feature-description {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .why-choose-us {
+        padding: 4rem 0;
+    }
+
+    .why-choose-us-container {
+        padding: 0 1.5rem;
+    }
+
+    .why-choose-us-title {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .features-list {
+        gap: 2rem;
+    }
+
+    .feature-item {
+        gap: 1.5rem;
+    }
+
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .feature-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .feature-title {
+        font-size: 1.25rem;
+    }
+
+    .feature-description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .why-choose-us-title {
+        font-size: 1.75rem;
+    }
+
+    .feature-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .feature-icon svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .feature-title {
+        font-size: 1.15rem;
+    }
+
+    .feature-description {
+        font-size: 0.95rem;
+    }
+}

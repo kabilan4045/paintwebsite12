@@ -14,9 +14,9 @@
     padding: 0 var(--spacing-md);
 }
 
-/* Header - Green/Teal Gradient Banner - Full Width */
+/* Header - Dark Blue Gradient Banner - Full Width */
 .faq-header {
-    background: linear-gradient(135deg, #34C759 0%, #30E3CA 100%);
+    background: linear-gradient(135deg, #1a2332 0%, #2d3e50 100%);
     padding: 4rem 2rem;
     margin: 0 0 var(--spacing-3xl) 0;
     width: 100vw;

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -47,11 +48,11 @@ const Footer = () => {
                     <div className="footer__column">
                         <h4 className="footer__heading">Quick Links</h4>
                         <ul className="footer__links">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/about">About Us</a></li>
-                            <li><a href="/products">Products</a></li>
-                            <li><a href="/services">Services</a></li>
-                            <li><a href="/contact">Contact</a></li>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/about">About Us</Link></li>
+                            <li><Link to="/products">Products</Link></li>
+                            <li><Link to="/services">Services</Link></li>
+                            <li><Link to="/contact">Contact</Link></li>
                         </ul>
                     </div>
 
@@ -59,11 +60,11 @@ const Footer = () => {
                     <div className="footer__column">
                         <h4 className="footer__heading">Our Products</h4>
                         <ul className="footer__links">
-                            <li><a href="/products#industrial">Industrial Coatings</a></li>
-                            <li><a href="/products#automotive">Automotive Finishes</a></li>
-                            <li><a href="/products#wood">WoodCoat Series</a></li>
-                            <li><a href="/products#decorative">Decorative Enamels</a></li>
-                            <li><a href="/products#primers">Primers & Thinners</a></li>
+                            <li><Link to="/products">Industrial Coatings</Link></li>
+                            <li><Link to="/products">Automotive Finishes</Link></li>
+                            <li><Link to="/products">WoodCoat Series</Link></li>
+                            <li><Link to="/products">Decorative Enamels</Link></li>
+                            <li><Link to="/products">Primers & Thinners</Link></li>
                         </ul>
                     </div>
 
@@ -99,9 +100,9 @@ const Footer = () => {
                         © 2025 Yashwanth Colour Coatings. All rights reserved.
                     </p>
                     <div className="footer__legal">
-                        <a href="/privacy">Privacy Policy</a>
+                        <Link to="/privacy">Privacy Policy</Link>
                         <span className="footer__separator">•</span>
-                        <a href="/terms">Terms of Service</a>
+                        <Link to="/terms">Terms of Service</Link>
                     </div>
                 </div>
             </div>

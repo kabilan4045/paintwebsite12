@@ -1,13 +1,19 @@
-import './Home.css';
+import HeroSection from '../components/HeroSection';
+import PaintboxShowcase from '../components/PaintboxShowcase';
+import KeyProducts from '../components/KeyProducts';
+import StatsSection from '../components/StatsSection';
+import WhyChooseUs from '../components/WhyChooseUs';
+import TestimonialsSection from '../components/TestimonialsSection';
 
 const Home = () => {
     return (
-        <div className="maintenance-page">
-            <div className="maintenance-content">
-                <h1>🎨</h1>
-                <h2>Under Maintenance</h2>
-                <p>We're currently updating our website. Please check back soon!</p>
-            </div>
+        <div>
+            <HeroSection />
+            <PaintboxShowcase />
+            <KeyProducts />
+            <StatsSection />
+            <WhyChooseUs />
+            <TestimonialsSection />
         </div>
     );
 };

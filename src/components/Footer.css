@@ -1,42 +1,27 @@
 /* ========================================
-   MODERN FOOTER - Replit Inspired
-   Dark navy with rainbow gradient top border
+   FOOTER - Blue Background
    ======================================== */
 
 .footer {
     position: relative;
-    background: #1a2332;
-    background-image: url('../background_img.png');
+    background-image: url('/src/assets/background_img.png');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-attachment: scroll;
     color: #ffffff;
-    padding: var(--spacing-4xl) 0 var(--spacing-lg);
-    margin-top: var(--spacing-4xl);
+    padding: var(--spacing-4xl) 0 5px;
+    margin-top: 0;
 }
 
-/* Rainbow Gradient Top Border */
 .footer::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 5px;
-    background: linear-gradient(90deg, #007AFF 0%, #00C6FF 50%, #0072FF 100%);
-    z-index: 3;
-}
-
-/* Overlay for background image */
-.footer::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
     bottom: 0;
-    background: rgba(26, 35, 50, 0.92);
-    z-index: 1;
+    background: rgba(0, 43, 152, 0.95);
+    pointer-events: none;
 }
 
 .footer__container {
@@ -45,7 +30,6 @@
     padding: 0 var(--spacing-md);
     position: relative;
     z-index: 2;
-    /* Ensure content is above overlay */
 }
 
 /* Main Content Grid */
@@ -237,7 +221,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: var(--spacing-sm);
+    padding-top: 5px;
 }
 
 .footer__copyright {

@@ -1,0 +1,389 @@
+.paintbox-showcase-section {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .paintbox-showcase-section {
+        padding: 3rem 0;
+    }
+}
+
+.paintbox-showcase-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+}
+
+/* Floating Texture Decorations */
+.floating-textures {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-texture {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    opacity: 0.15;
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-texture img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.paintbox-showcase-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.showcase-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.showcase-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #F59E0B 0%, #EF4444 50%, #DC2626 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.showcase-subtitle {
+    font-size: 1.2rem;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.paintbox-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.paintbox-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInUp 0.6s ease-out backwards;
+    aspect-ratio: 3/4;
+}
+
+.paintbox-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.texture-pattern {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 150%;
+    object-fit: cover;
+    opacity: 0.12;
+    filter: blur(3px);
+    transition: all 0.5s ease;
+}
+
+.paintbox-item:hover .texture-pattern {
+    transform: translate(-50%, -50%) scale(1.15) rotate(5deg);
+    opacity: 0.18;
+}
+
+.color-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--box-color);
+    opacity: 0.85;
+    transition: all 0.4s ease;
+}
+
+.paintbox-item:hover .color-overlay {
+    opacity: 0.95;
+}
+
+.paintbox-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    background: transparent;
+    transition: all 0.4s ease;
+}
+
+.paintbox-item:hover .paintbox-content {
+    transform: translateY(-8px);
+}
+
+.paintbox-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.3));
+}
+
+.paintbox-item:hover .paintbox-image {
+    transform: scale(1.08);
+    filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.4));
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .paintbox-carousel {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .paintbox-showcase-section {
+        padding: 5rem 0;
+    }
+
+    .showcase-title {
+        font-size: 2.5rem;
+    }
+
+    .showcase-subtitle {
+        font-size: 1.15rem;
+    }
+
+    .paintbox-carousel {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .paintbox-showcase-section {
+        padding: 4rem 0;
+    }
+
+    .paintbox-showcase-container {
+        padding: 0 1.5rem;
+    }
+
+    .showcase-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .showcase-title {
+        font-size: 2rem;
+    }
+
+    .showcase-subtitle {
+        font-size: 1.05rem;
+        padding: 0 1rem;
+    }
+
+    .paintbox-carousel {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
+    .paintbox-item {
+        aspect-ratio: 4/5;
+    }
+
+    .paintbox-content {
+        padding: 1.5rem 1rem;
+    }
+
+    .floating-texture {
+        width: 60px;
+        height: 60px;
+        opacity: 0.1;
+    }
+
+    /* Disable hover effects on touch devices */
+    .paintbox-item:hover .paintbox-content {
+        transform: none;
+    }
+
+    .paintbox-item:hover .paintbox-image {
+        transform: scale(1.02);
+    }
+}
+
+@media (max-width: 576px) {
+    .paintbox-showcase-section {
+        padding: 3rem 0;
+    }
+
+    .paintbox-showcase-container {
+        padding: 0 1rem;
+    }
+
+    .showcase-header {
+        margin-bottom: 2rem;
+    }
+
+    .showcase-title {
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+
+    .showcase-subtitle {
+        font-size: 1rem;
+        padding: 0;
+    }
+
+    .paintbox-carousel {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .paintbox-item {
+        border-radius: 16px;
+        aspect-ratio: 1;
+    }
+
+    .paintbox-content {
+        padding: 1.25rem 0.75rem;
+    }
+
+    .floating-texture {
+        width: 50px;
+        height: 50px;
+        opacity: 0.08;
+    }
+}
+
+@media (max-width: 400px) {
+    .paintbox-showcase-section {
+        padding: 2.5rem 0;
+    }
+
+    .showcase-title {
+        font-size: 1.5rem;
+    }
+
+    .showcase-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .paintbox-carousel {
+        gap: 0.75rem;
+    }
+
+    .paintbox-item {
+        border-radius: 12px;
+    }
+
+    .paintbox-content {
+        padding: 1rem 0.5rem;
+    }
+
+    .paintbox-image {
+        filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.25));
+    }
+
+    .floating-texture {
+        width: 40px;
+        height: 40px;
+        opacity: 0.06;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .paintbox-item {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .paintbox-item:active .paintbox-content {
+        transform: scale(0.98);
+    }
+
+    .paintbox-item:active .paintbox-image {
+        transform: scale(1.02);
+    }
+
+    /* Disable complex animations on touch devices for better performance */
+    .floating-texture {
+        animation: none;
+    }
+}

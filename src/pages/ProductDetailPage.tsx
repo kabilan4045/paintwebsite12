@@ -3,10 +3,12 @@ import { useState } from 'react';
 import './ProductDetailPage.css';
 import { getProductById } from '../data/products';
 import checkMarkIcon from '../check-mark.png';
+import EnquiryModal from '../components/EnquiryModal';
 
 const ProductDetailPage = () => {
     const { productId } = useParams<{ productId: string }>();
     const [selectedImage, setSelectedImage] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     // Get product data by ID from URL
     const product = productId ? getProductById(productId) : null;
@@ -94,7 +96,7 @@ const ProductDetailPage = () => {
 
                         {/* CTA Buttons */}
                         <div className="product-actions">
-                            <button className="btn-enquire">
+                            <button className="btn-enquire" onClick={() => setIsModalOpen(true)}>
                                 Enquire Now
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -110,6 +112,13 @@ const ProductDetailPage = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Enquiry Modal */}
+            <EnquiryModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                productName={product.name}
+            />
         </div>
     );
 };
