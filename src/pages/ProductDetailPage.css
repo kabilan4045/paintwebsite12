@@ -6,6 +6,48 @@
     min-height: 100vh;
     background: #ffffff;
     padding: 0;
+    position: relative;
+}
+
+/* Decorative paint drops */
+.product-detail-page::before,
+.product-detail-page::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 100px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23E8F4FF'%3E%3Cpath d='M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.product-detail-page::before {
+    top: 10%;
+    left: 5%;
+    transform: rotate(-15deg);
+    animation: float 6s ease-in-out infinite;
+}
+
+.product-detail-page::after {
+    top: 30%;
+    right: 8%;
+    transform: rotate(25deg);
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(var(--rotation, 0deg));
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(var(--rotation, 0deg));
+    }
 }
 
 .product-detail-container {
@@ -479,6 +521,12 @@
     .section-title-centered {
         font-size: var(--font-size-lg);
     }
+
+    /* Hide decorative paint drops on mobile */
+    .product-detail-page::before,
+    .product-detail-page::after {
+        display: none;
+    }
 }
 
 /* Small Mobile */
@@ -496,8 +544,44 @@
         padding: 0.4rem 1rem;
     }
 
+    /* Horizontal scrollable thumbnails on mobile */
     .product-image-thumbnails {
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        grid-template-columns: none;
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: var(--spacing-xs);
+        padding-bottom: 8px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(0, 122, 255, 0.3) rgba(0, 0, 0, 0.1);
+    }
+
+    .product-image-thumbnails::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .product-image-thumbnails::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 3px;
+    }
+
+    .product-image-thumbnails::-webkit-scrollbar-thumb {
+        background: rgba(0, 122, 255, 0.4);
+        border-radius: 3px;
+    }
+
+    .product-image-thumbnails::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 122, 255, 0.6);
+    }
+
+    .thumbnail {
+        min-width: 80px;
+        width: 80px;
+        height: 80px;
+        scroll-snap-align: start;
+        flex-shrink: 0;
     }
 
     .features-list svg {

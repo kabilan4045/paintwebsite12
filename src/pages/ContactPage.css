@@ -10,7 +10,8 @@
 .contact-page-header {
     background: linear-gradient(135deg, #FF9500 0%, #FF3B30 100%);
     padding: 4rem 2rem;
-    margin: 0 0 var(--spacing-3xl) 0;
+    margin-top: -11px;
+    margin-bottom: var(--spacing-3xl);
     width: 100vw;
     position: relative;
     left: 50%;
@@ -23,7 +24,7 @@
 
 .contact-page-title {
     font-family: var(--font-display);
-    font-size: var(--font-size-5xl);
+    font-size: 3.5rem;
     font-weight: 700;
     color: #ffffff;
     margin: 0 0 var(--spacing-md) 0;
@@ -36,7 +37,7 @@
 
 .contact-page-subtitle {
     font-family: var(--font-secondary);
-    font-size: var(--font-size-lg);
+    font-size: 1.25rem;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.95);
     max-width: 700px;
@@ -49,8 +50,7 @@
    ======================================== */
 
 .contact-page {
-    background: var(--neutral-white);
-    padding: 0;
+    background: #FFFFFF;
 }
 
 /* ========================================

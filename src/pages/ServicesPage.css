@@ -4,8 +4,7 @@
 
 .services-page {
     min-height: 100vh;
-    background: var(--neutral-white);
-    padding: 0;
+    background: #FFFFFF;
 }
 
 .services-container {
@@ -18,7 +17,8 @@
 .services-header {
     background: linear-gradient(135deg, #E52E41 0%, #FF6B35 100%);
     padding: 4rem 2rem;
-    margin: 0 0 var(--spacing-4xl) 0;
+    margin-top: -80px;
+    margin-bottom: var(--spacing-4xl);
     width: 100vw;
     position: relative;
     left: 50%;
@@ -31,7 +31,7 @@
 
 .services-title {
     font-family: var(--font-display);
-    font-size: var(--font-size-5xl);
+    font-size: 3.5rem;
     font-weight: 700;
     color: #ffffff;
     margin: 0 0 var(--spacing-md) 0;
@@ -44,7 +44,7 @@
 
 .services-subtitle {
     font-family: var(--font-secondary);
-    font-size: var(--font-size-lg);
+    font-size: 1.25rem;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.95);
     max-width: 700px;
@@ -235,19 +235,19 @@
 /* Enquire Now Button */
 .service-card__button {
     width: 100%;
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 2.5rem;
     background: var(--primary-blue);
     color: var(--neutral-white);
     border: none;
-    border-radius: var(--radius-sm);
+    border-radius: 8px;
     font-family: var(--font-primary);
-    font-size: var(--font-size-sm);
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: auto;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.5px;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -318,11 +318,11 @@
     .whatsapp-widget {
         width: calc(100% - 2rem);
         right: 1rem;
-        bottom: 5rem;
+        bottom: 5.5rem;
     }
 
     .whatsapp-float {
-        bottom: 1.5rem;
+        bottom: 5rem;
         right: 1.5rem;
         width: 56px;
         height: 56px;

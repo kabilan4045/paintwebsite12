@@ -4,8 +4,7 @@
 
 .faq-page {
     min-height: 100vh;
-    background: var(--neutral-white);
-    padding: 0;
+    background: #FFFFFF;
 }
 
 .faq-container {
@@ -18,7 +17,8 @@
 .faq-header {
     background: linear-gradient(135deg, #1a2332 0%, #2d3e50 100%);
     padding: 4rem 2rem;
-    margin: 0 0 var(--spacing-3xl) 0;
+    margin-top: -80px;
+    margin-bottom: var(--spacing-3xl);
     width: 100vw;
     position: relative;
     left: 50%;
@@ -32,7 +32,7 @@
 /* Title */
 .faq-title {
     font-family: var(--font-display);
-    font-size: var(--font-size-5xl);
+    font-size: 3.5rem;
     font-weight: 700;
     color: #ffffff;
     margin: 0 0 var(--spacing-md) 0;
@@ -44,7 +44,7 @@
 
 .faq-subtitle {
     font-family: var(--font-secondary);
-    font-size: var(--font-size-lg);
+    font-size: 1.25rem;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.95);
     max-width: 700px;

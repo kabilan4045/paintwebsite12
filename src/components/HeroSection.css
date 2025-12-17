@@ -430,12 +430,17 @@
         text-align: center;
     }
 
+    /* Hide decorative visual elements on mobile */
     .hero-visual {
-        height: 300px;
+        display: none;
     }
 
     .paint-splash {
-        filter: blur(60px);
+        display: none;
+    }
+
+    .paint-brush {
+        display: none;
     }
 }
 
@@ -466,7 +471,8 @@
         font-size: 0.85rem;
     }
 
+    /* Keep visual elements hidden on small mobile */
     .hero-visual {
-        height: 250px;
+        display: none;
     }
 }
