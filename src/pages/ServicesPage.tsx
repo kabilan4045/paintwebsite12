@@ -1,3 +1,5 @@
+import SEO from '../components/SEO';
+import { getBreadcrumbSchema } from '../utils/structuredData';
 import './ServicesPage.css';
 
 // Import service images
@@ -17,6 +19,11 @@ interface Service {
 }
 
 const ServicesPage = () => {
+    const breadcrumbSchema = getBreadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: 'Services', url: '/services' },
+    ]);
+
     const services: Service[] = [
         {
             title: "Industrial Painting Services",
@@ -109,62 +116,78 @@ const ServicesPage = () => {
     ];
 
     return (
-        <div className="services-page">
-            <div className="services-container">
-                {/* Page Header - Consistent Design */}
-                <div className="services-header">
-                    <h1 className="services-title">Services We Offer</h1>
-                    <p className="services-subtitle">
-                        Professional coating solutions tailored to your needs
-                    </p>
-                </div>
+        <>
+            <SEO
+                title="Professional Coating Services - Industrial, Automotive & Wood | Yashwanth Colour Coatings"
+                description="Expert coating services in Chennai: Industrial painting, automotive finishing, wood coating, surface preparation, and color consultation. Professional solutions for all your coating needs."
+                keywords="industrial painting services, automotive painting chennai, wood coating services, surface preparation, color consultation, professional coating services chennai"
+                canonicalUrl="/services"
+                structuredData={breadcrumbSchema}
+            />
+            <div className="services-page">
+                <div className="services-container">
+                    {/* Page Header - Consistent Design */}
+                    <header className="services-header">
+                        <h1 className="services-title">Services We Offer</h1>
+                        <p className="services-subtitle">
+                            Professional coating solutions tailored to your needs
+                        </p>
+                    </header>
 
-                {/* Services Grid */}
-                <div className="services-grid">
-                    {services.map((service, index) => (
-                        <div key={index} className="service-card">
-                            <div className="service-card__image">
-                                <img src={service.image} alt={service.title} />
-                            </div>
-
-                            <div className="service-card__content">
-                                <div className="service-card__tags">
-                                    {service.tags.map((tag, idx) => (
-                                        <span key={idx} className="service-card__tag">{tag}</span>
-                                    ))}
+                    {/* Services Grid */}
+                    <section className="services-grid">
+                        {services.map((service, index) => (
+                            <article key={index} className="service-card">
+                                <div className="service-card__image">
+                                    <img
+                                        src={service.image}
+                                        alt={`${service.title} - Professional coating service`}
+                                        loading="lazy"
+                                        width="400"
+                                        height="300"
+                                    />
                                 </div>
 
-                                <div className="service-card__header">
-                                    <h2 className="service-card__title">{service.title}</h2>
-                                    <p className="service-card__description">{service.description}</p>
-                                </div>
-
-                                <div className="service-card__body">
-                                    <h3 className="service-card__section-title">What We Provide:</h3>
-                                    <ul className="service-card__features">
-                                        {service.features.map((feature, idx) => (
-                                            <li key={idx}>{feature}</li>
+                                <div className="service-card__content">
+                                    <div className="service-card__tags">
+                                        {service.tags.map((tag, idx) => (
+                                            <span key={idx} className="service-card__tag">{tag}</span>
                                         ))}
-                                    </ul>
+                                    </div>
 
-                                    {service.idealFor && (
-                                        <div className="service-card__info">
-                                            <span className="service-card__label">Ideal For:</span>
-                                            <span className="service-card__value">{service.idealFor}</span>
-                                        </div>
-                                    )}
+                                    <div className="service-card__header">
+                                        <h2 className="service-card__title">{service.title}</h2>
+                                        <p className="service-card__description">{service.description}</p>
+                                    </div>
+
+                                    <div className="service-card__body">
+                                        <h3 className="service-card__section-title">What We Provide:</h3>
+                                        <ul className="service-card__features">
+                                            {service.features.map((feature, idx) => (
+                                                <li key={idx}>{feature}</li>
+                                            ))}
+                                        </ul>
+
+                                        {service.idealFor && (
+                                            <div className="service-card__info">
+                                                <span className="service-card__label">Ideal For:</span>
+                                                <span className="service-card__value">{service.idealFor}</span>
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    <button className="service-card__button" aria-label={`Enquire about ${service.title}`}>
+                                        Enquire Now
+                                    </button>
                                 </div>
-
-                                <button className="service-card__button">
-                                    Enquire Now
-                                </button>
-                            </div>
-                        </div>
-                    ))}
+                            </article>
+                        ))}
+                    </section>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
 export default ServicesPage;
+
